@@ -1,28 +1,36 @@
+import Header from './components/layouts/Header';
+import Footer from './components/layouts/Footer';
+import Content from './components/Content';
+import Image from './components/Image';
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
+import registerServiceWorker from './registerServiceWorker';
 
-class App extends Component {
+const colorStyle = createMuiTheme({
+  palette: {
+    primary: {
+      main: '#FFFFFF',
+    },
+    secondary: {
+      main: '#000000',
+    },
+  },
+});
+
+
+export default class App extends Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
-    );
+      <div>
+        <MuiThemeProvider theme={colorStyle}>
+          <Header />
+          <Image />
+          <Content />
+          <Footer />
+        </MuiThemeProvider>
+      </div>)
   }
 }
 
-export default App;
+
+
