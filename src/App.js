@@ -4,7 +4,6 @@ import Content from './components/Content';
 import Image from './components/Image';
 import React, { Component } from 'react';
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
-import registerServiceWorker from './registerServiceWorker';
 
 const colorStyle = createMuiTheme({
   palette: {
